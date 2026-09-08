@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "line-industry-png2svg"
+version = "0.1.0"
+description = "Centerline raster-to-SVG converter for the Line of Industry art project"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=1.24,<3",
+  "Pillow>=10,<12",
+  "PyYAML>=6,<7",
+]
+
+[project.scripts]
+png2svg = "png2svg.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

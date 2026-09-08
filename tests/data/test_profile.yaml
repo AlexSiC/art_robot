@@ -1,0 +1,42 @@
+schema_version: 1
+profile_id: test_v1
+
+image:
+  upscale_min_short_side: 64
+  adaptive: false
+  remove_small_objects_px: 2
+  bridge_gap_px: 0
+
+skeleton:
+  engine: skeleton
+  method: zhang
+  spur_len_px: 2
+  node_merge_dist_px: 2
+  collinear_deg: 4
+  smooth_chaikin_iterations: 0
+
+simplify:
+  tolerance_vb: 0.5
+  dedupe_epsilon_vb: 0.01
+  max_length_loss_ratio: 0.03
+
+paths:
+  merge_tol_vb: 0.1
+  min_stroke_len_vb: 2
+  linesort_two_opt: true
+  reloop: true
+
+fills:
+  enabled: false
+
+output:
+  emit_ids: true
+  stroke_width: 1
+  decimal_places: 2
+  verify_with_svg2fanuc: false
+
+limits:
+  max_input_bytes: 1048576
+  max_image_pixels: 1000000
+  max_strokes: 1000
+  max_points: 10000

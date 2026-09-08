@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# virtual environments
+.venv/
+venv/
+env/
+
+# job output
+/build/
+**/build/job_*/
+/out/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Obsidian: keep shared vault config, ignore per-user workspace state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache

@@ -1,0 +1,72 @@
+# Example cell profile (section 9). Engineering values only — NOT qualified for a
+# real robot. `robot.*` fields left as TBD block `generate --production`.
+schema_version: 1
+cell_id: example_dev_cell_v0
+
+robot:
+  vendor: FANUC
+  model: TBD
+  controller: TBD
+  controller_software: TBD
+  # For plain `generate` a real CONFIG string is required. This placeholder is
+  # only valid for `inspect`. Replace after the integrator confirms it on the
+  # whole allowed area.
+  config: "N U T, 0, 0, 0"
+
+frames:
+  uframe_num: 1
+  utool_num: 1
+  orientation_wpr_deg: [180.0, 0.0, 0.0]
+
+canvas:
+  width_mm: 800.0
+  height_mm: 600.0
+  margin_mm: 20.0
+  fit: contain
+  align: center
+  z_draw_mm: 0.0
+  z_clear_mm: 15.0
+
+geometry:
+  flatness_mm: 0.25
+  max_segment_mm: 5.0
+  dedupe_epsilon_mm: 0.01
+  min_stroke_length_mm: 1.0
+  max_subdivision_depth: 20
+  max_strokes: 5000
+  max_points: 50000
+  max_draw_length_mm: 100000.0
+
+routing:
+  mode: nearest
+  travel_start_xy_mm: [0.0, 0.0]
+  two_opt_max_iterations: 200
+
+motion:
+  draw_speed_mm_s: 100.0
+  plunge_speed_mm_s: 40.0
+  retract_speed_mm_s: 40.0
+  travel_speed_mm_s: 250.0
+  cnt_draw: 3
+  sharp_corner_deg: 55.0
+  entry_program: CELL_IN
+  exit_program: CELL_OUT
+
+fanuc_ls:
+  program_name_prefix: ART
+  program_name_max_chars: 8
+  max_motion_lines_per_subprogram: 1500
+  encoding: ascii
+  decimal_places_mm: 3
+  decimal_places_deg: 3
+
+compile:
+  enabled: false
+  maketp_exe: null
+  robot_ini: null
+
+security:
+  max_input_bytes: 10485760
+  max_xml_depth: 32
+  max_elements: 20000
+  max_attribute_chars: 1000000
