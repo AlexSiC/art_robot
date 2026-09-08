@@ -13,6 +13,9 @@ dependencies = [
   "PyYAML>=6,<7",
 ]
 
+[project.optional-dependencies]
+skimage = ["scikit-image>=0.22,<1"]
+
 [project.scripts]
 png2svg = "png2svg.cli:main"
 
@@ -21,4 +24,3 @@ package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
-

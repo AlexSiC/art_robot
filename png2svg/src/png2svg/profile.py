@@ -97,6 +97,13 @@ def validate_profile(profile: dict[str, Any]) -> None:
         raise ConfigurationError(
             "Поддерживается только schema_version: 1", code="PROFILE_SCHEMA"
         )
+    sections = ("image", "skeleton", "simplify", "paths", "fills", "output", "limits")
+    for section in sections:
+        if not isinstance(profile.get(section), dict):
+            raise ConfigurationError(
+                f"Раздел {section} должен быть mapping", code="PROFILE_TYPE"
+            )
+
     engine = profile["skeleton"].get("engine")
     if engine not in {"skeleton", "autotrace"}:
         raise ConfigurationError(
@@ -108,21 +115,74 @@ def validate_profile(profile: dict[str, Any]) -> None:
         raise ConfigurationError(
             "skeleton.method должен быть auto, zhang или lee", code="PROFILE_METHOD"
         )
+    bool_fields = (
+        ("image.otsu", profile["image"]["otsu"]),
+        ("image.adaptive", profile["image"]["adaptive"]),
+        ("paths.linesort_two_opt", profile["paths"]["linesort_two_opt"]),
+        ("paths.reloop", profile["paths"]["reloop"]),
+        ("fills.enabled", profile["fills"]["enabled"]),
+        ("output.emit_ids", profile["output"]["emit_ids"]),
+        ("output.verify_with_svg2fanuc", profile["output"]["verify_with_svg2fanuc"]),
+    )
+    for name, value in bool_fields:
+        if not isinstance(value, bool):
+            raise ConfigurationError(f"{name} должно быть boolean", code="PROFILE_VALUE")
+    if not profile["image"]["adaptive"] and not profile["image"]["otsu"]:
+        raise ConfigurationError(
+            "Нужно включить image.otsu или image.adaptive", code="PROFILE_THRESHOLD"
+        )
     numeric_positive = [
         ("image.upscale_min_short_side", profile["image"]["upscale_min_short_side"], True),
+        ("image.adaptive_block_size", profile["image"]["adaptive_block_size"], True),
+        ("image.remove_small_objects_px", profile["image"]["remove_small_objects_px"], False),
+        ("image.bridge_gap_px", profile["image"]["bridge_gap_px"], False),
+        ("skeleton.spur_len_px", profile["skeleton"]["spur_len_px"], False),
+        ("skeleton.node_merge_dist_px", profile["skeleton"]["node_merge_dist_px"], False),
+        ("skeleton.collinear_deg", profile["skeleton"]["collinear_deg"], False),
+        ("skeleton.smooth_chaikin_iterations", profile["skeleton"]["smooth_chaikin_iterations"], False),
         ("simplify.tolerance_vb", profile["simplify"]["tolerance_vb"], False),
         ("simplify.dedupe_epsilon_vb", profile["simplify"]["dedupe_epsilon_vb"], False),
+        ("simplify.max_length_loss_ratio", profile["simplify"]["max_length_loss_ratio"], False),
         ("paths.merge_tol_vb", profile["paths"]["merge_tol_vb"], False),
         ("paths.min_stroke_len_vb", profile["paths"]["min_stroke_len_vb"], False),
+        ("output.stroke_width", profile["output"]["stroke_width"], True),
         ("limits.max_input_bytes", profile["limits"]["max_input_bytes"], True),
         ("limits.max_image_pixels", profile["limits"]["max_image_pixels"], True),
         ("limits.max_strokes", profile["limits"]["max_strokes"], True),
         ("limits.max_points", profile["limits"]["max_points"], True),
     ]
     for name, value, strict in numeric_positive:
-        if not isinstance(value, (int, float)) or (value <= 0 if strict else value < 0):
+        if (
+            isinstance(value, bool)
+            or not isinstance(value, (int, float))
+            or (value <= 0 if strict else value < 0)
+        ):
             op = "> 0" if strict else ">= 0"
             raise ConfigurationError(f"{name} должно быть числом {op}", code="PROFILE_VALUE")
+    if float(profile["simplify"]["max_length_loss_ratio"]) > 1:
+        raise ConfigurationError(
+            "simplify.max_length_loss_ratio должно быть <= 1",
+            code="PROFILE_VALUE",
+        )
+    if float(profile["skeleton"]["collinear_deg"]) > 180:
+        raise ConfigurationError(
+            "skeleton.collinear_deg должен быть <= 180",
+            code="PROFILE_VALUE",
+        )
+    integer_fields = (
+        ("image.upscale_min_short_side", profile["image"]["upscale_min_short_side"]),
+        ("image.adaptive_block_size", profile["image"]["adaptive_block_size"]),
+        ("image.remove_small_objects_px", profile["image"]["remove_small_objects_px"]),
+        ("image.bridge_gap_px", profile["image"]["bridge_gap_px"]),
+        ("skeleton.smooth_chaikin_iterations", profile["skeleton"]["smooth_chaikin_iterations"]),
+        ("limits.max_input_bytes", profile["limits"]["max_input_bytes"]),
+        ("limits.max_image_pixels", profile["limits"]["max_image_pixels"]),
+        ("limits.max_strokes", profile["limits"]["max_strokes"]),
+        ("limits.max_points", profile["limits"]["max_points"]),
+    )
+    for name, value in integer_fields:
+        if isinstance(value, bool) or not isinstance(value, int):
+            raise ConfigurationError(f"{name} должно быть integer", code="PROFILE_VALUE")
     decimals = profile["output"].get("decimal_places")
     if not isinstance(decimals, int) or not 0 <= decimals <= 8:
         raise ConfigurationError(
@@ -140,4 +200,3 @@ def canonical_profile_bytes(profile: dict[str, Any]) -> bytes:
     return json.dumps(
         profile, ensure_ascii=False, sort_keys=True, separators=(",", ":")
     ).encode("utf-8")
-

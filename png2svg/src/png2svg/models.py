@@ -70,6 +70,9 @@ class ProcessingStats:
     graph_nodes: int = 0
     graph_edges: int = 0
     graph_node_pixels_collapsed: int = 0
+    graph_nodes_merged: int = 0
+    estimated_stroke_width_px: float = 0.0
+    node_merge_distance_used_px: float = 0.0
     spurs_pruned: int = 0
     strokes_merged: int = 0
     dropped_short_strokes: int = 0
@@ -97,4 +100,3 @@ class ProcessingStats:
             name: getattr(self, name)
             for name in self.__dataclass_fields__
         }
-

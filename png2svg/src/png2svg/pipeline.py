@@ -28,7 +28,6 @@ from .errors import (
     EmptyImageError,
     IntegrationError,
     ValidationError,
-    VectorizationError,
 )
 from .geometry import (
     bbox,
@@ -110,6 +109,10 @@ def _apply_options(profile: dict[str, Any], options: GenerateOptions) -> dict[st
 
 def _validate_output_target(out: Path) -> None:
     if out.exists():
+        if out.is_symlink():
+            raise ConfigurationError(
+                f"--out не должен быть символической ссылкой: {out}", code="OUTPUT_SYMLINK"
+            )
         if not out.is_dir():
             raise ConfigurationError(
                 f"--out указывает не на директорию: {out}", code="OUTPUT_NOT_DIRECTORY"
@@ -189,10 +192,14 @@ def _publish(out: Path, files: dict[str, bytes]) -> list[str]:
     try:
         for name, data in files.items():
             (stage / name).write_bytes(data)
-        out.mkdir(parents=True, exist_ok=True)
-        for name in sorted(files):
-            os.replace(stage / name, out / name)
+        if out.exists():
+            out.rmdir()  # validated as an empty, non-symlink directory
+        os.replace(stage, out)
         return sorted(files)
+    except OSError as exc:
+        raise ConfigurationError(
+            f"Не удалось атомарно опубликовать результат: {exc}", code="OUTPUT_PUBLISH"
+        ) from exc
     finally:
         shutil.rmtree(stage, ignore_errors=True)
 
@@ -231,11 +238,24 @@ def generate(options: GenerateOptions) -> GenerateResult:
 
     mask = make_mask(gray, profile, stats)
     skeleton = skeletonize_mask(mask, profile, stats)
+    stats.estimated_stroke_width_px = stats.foreground_pixels / max(
+        1, stats.skeleton_pixels
+    )
+    configured_node_merge = float(profile["skeleton"]["node_merge_dist_px"])
+    adaptive_node_merge = min(
+        64.0,
+        min(width, height) * 0.05,
+        stats.estimated_stroke_width_px * 1.25,
+    )
+    node_merge_distance = max(configured_node_merge, adaptive_node_merge)
+    stats.node_merge_distance_used_px = node_merge_distance
     strokes = vectorize_skeleton(
         skeleton,
         spur_len_px=float(profile["skeleton"]["spur_len_px"]),
         smooth_iterations=int(profile["skeleton"]["smooth_chaikin_iterations"]),
         stats=stats,
+        node_merge_dist_px=node_merge_distance,
+        collinear_deg=float(profile["skeleton"]["collinear_deg"]),
     )
     stats.points_before_simplify = sum(len(stroke.points) for stroke in strokes)
 
@@ -290,6 +310,12 @@ def generate(options: GenerateOptions) -> GenerateResult:
             "После фильтра минимальной длины не осталось штрихов",
             code="EMPTY_AFTER_FILTER",
         )
+    max_strokes = int(profile["limits"]["max_strokes"])
+    if len(filtered) > max_strokes:
+        raise BudgetError(
+            f"Результат содержит {len(filtered)} штрихов, лимит {max_strokes}",
+            code="STROKE_BUDGET",
+        )
     stats.travel_length_before = travel_length(filtered)
     ordered = sort_strokes(
         filtered,
@@ -303,7 +329,6 @@ def generate(options: GenerateOptions) -> GenerateResult:
         ordered, width, height, decimals, epsilon
     )
     stats.dropped_short_strokes += rounded_drops
-    max_strokes = int(profile["limits"]["max_strokes"])
     point_count = sum(len(stroke.points) for stroke in final_strokes)
     if len(final_strokes) > max_strokes or point_count > max_points:
         raise BudgetError(
@@ -332,14 +357,15 @@ def generate(options: GenerateOptions) -> GenerateResult:
         files["skeleton.png"] = _skeleton_png_bytes(skeleton)
 
     effective_profile = canonical_profile_bytes(profile)
-    files["manifest.json"] = manifest_bytes(
-        input_name=options.image.name,
-        input_hash=hashlib.sha256(options.image.read_bytes()).hexdigest(),
-        source_profile_hash=hashlib.sha256(profile_source).hexdigest(),
-        effective_profile_hash=hashlib.sha256(effective_profile).hexdigest(),
-        artifacts=files,
-        dry_run=options.dry_run,
-    )
+    if not options.dry_run:
+        files["manifest.json"] = manifest_bytes(
+            input_name=options.image.name,
+            input_hash=hashlib.sha256(options.image.read_bytes()).hexdigest(),
+            source_profile_hash=hashlib.sha256(profile_source).hexdigest(),
+            effective_profile_hash=hashlib.sha256(effective_profile).hexdigest(),
+            artifacts=files,
+            dry_run=False,
+        )
 
     if profile["output"].get("verify_with_svg2fanuc"):
         if options.dry_run:

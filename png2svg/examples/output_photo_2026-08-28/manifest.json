@@ -1,0 +1,34 @@
+{
+  "artifacts": {
+    "clean.svg": {
+      "bytes": 1895,
+      "sha256": "b66df2af2713add02de1d93044029a2a95df565a66f887e60c45a5270356c5da"
+    },
+    "preview.svg": {
+      "bytes": 5601,
+      "sha256": "bb1db735cae2aac55696a9d5263341c7f26cb3c0bebd0f9229f63427cf8b53e5"
+    },
+    "stats.json": {
+      "bytes": 1200,
+      "sha256": "15379f250e7046468cfac9af6bf4e9eb1fae8f3dd3691f7fb2d5a204497c9616"
+    }
+  },
+  "dry_run": false,
+  "input": {
+    "name": "photo_2026-08-28_12-49-25.jpg",
+    "sha256": "8b4ab46b8b43253f3355f13eee6e870c7c31c75292a806649166f1f5d4de2955"
+  },
+  "mode": "production",
+  "profile": {
+    "effective_sha256": "335157340be5e30f7595c7f01b1624587f2ad479c250592eed431ab71277c423",
+    "source_sha256": "4eacfaf0ce1883ddd9957681191cc25f2dd8f0d87bcd9cd72d7c23e076aba4b7"
+  },
+  "schema_version": 1,
+  "versions": {
+    "Pillow": "10.2.0",
+    "PyYAML": "6.0.1",
+    "numpy": "1.26.4",
+    "png2svg": "0.1.0",
+    "python": "3.12.3"
+  }
+}

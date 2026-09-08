@@ -250,8 +250,9 @@ def sort_strokes(
     strokes: list[Stroke], *, reloop: bool = True, two_opt: bool = True
 ) -> list[Stroke]:
     """Deterministic nearest-neighbor route with optional 2-opt refinement."""
-    if len(strokes) < 2:
+    if not strokes:
         return [stroke.copy() for stroke in strokes]
+    baseline = travel_length(strokes)
     remaining = [stroke.copy() for stroke in strokes]
     output: list[Stroke] = []
     current: Point = (0.0, 0.0)
@@ -286,6 +287,8 @@ def sort_strokes(
             relooped.append(chosen)
             current = chosen.end
         output = relooped
+    if travel_length(output) > baseline + 1e-12:
+        return [stroke.copy() for stroke in strokes]
     return output
 
 

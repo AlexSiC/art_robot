@@ -1,0 +1,54 @@
+{
+  "bbox_vb": [
+    135.0,
+    103.0,
+    1231.0,
+    986.0
+  ],
+  "closed_strokes": 0,
+  "connected_components": 6,
+  "dropped_short_strokes": 0,
+  "estimated_stroke_width_px": 29.49739693260166,
+  "foreground_pixels": 209638,
+  "graph_edges": 84,
+  "graph_node_pixels_collapsed": 601,
+  "graph_nodes": 85,
+  "graph_nodes_merged": 3,
+  "length_loss_ratio": 0.0004793510380158885,
+  "max_simplify_deviation_vb": 0.7961871700954661,
+  "node_merge_distance_used_px": 36.87174616575207,
+  "open_strokes": 16,
+  "points": 90,
+  "points_before_simplify": 133,
+  "points_removed_by_simplify": 42,
+  "simplify_tolerance_vb": 0.8,
+  "skeleton_pixels": 7107,
+  "source_image_size": [
+    1280,
+    1087
+  ],
+  "spurs_pruned": 1,
+  "strokes": 16,
+  "strokes_merged": 1,
+  "threshold": 129.0,
+  "total_length_vb": 7079.1308821724715,
+  "travel_length_after": 2463.4079637577047,
+  "travel_length_before": 8720.993149101096,
+  "upscale_factor": 1.0,
+  "viewbox": [
+    0.0,
+    0.0,
+    1280.0,
+    1087.0
+  ],
+  "warnings": [
+    {
+      "code": "COLOR_INPUT",
+      "message": "Входной режим RGB преобразован в grayscale"
+    }
+  ],
+  "working_image_size": [
+    1280,
+    1087
+  ]
+}

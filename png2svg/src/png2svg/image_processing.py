@@ -42,7 +42,7 @@ def load_grayscale(
                     "COLOR_INPUT",
                     f"Входной режим {original_mode} преобразован в grayscale",
                 )
-            if "A" in source.getbands():
+            if "A" in source.getbands() or "transparency" in source.info:
                 rgba = source.convert("RGBA")
                 background = Image.new("RGBA", rgba.size, (255, 255, 255, 255))
                 background.alpha_composite(rgba)
@@ -67,9 +67,7 @@ def load_grayscale(
             stats.upscale_factor = factor
             stats.working_image_size = list(gray_image.size)
             return np.asarray(gray_image, dtype=np.uint8)
-    except (UnidentifiedImageError, OSError, ValueError) as exc:
-        if isinstance(exc, (ImageReadError, BudgetError)):
-            raise
+    except (UnidentifiedImageError, OSError, SyntaxError, ValueError) as exc:
         raise ImageReadError(
             f"Не удалось декодировать изображение: {exc}", code="IMAGE_DECODE"
         ) from exc
@@ -231,5 +229,16 @@ def make_mask(
         raise EmptyImageError(
             "После бинаризации и фильтрации не осталось штрихов",
             code="EMPTY_AFTER_THRESHOLD",
+        )
+    if components > 100:
+        stats.warn(
+            "MANY_COMPONENTS",
+            f"После бинаризации найдено много компонент: {components}",
+        )
+    foreground_ratio = stats.foreground_pixels / mask.size
+    if foreground_ratio > 0.5:
+        stats.warn(
+            "DENSE_FOREGROUND",
+            f"Штрихи занимают {foreground_ratio:.1%} кадра; проверьте полярность и заливки",
         )
     return mask

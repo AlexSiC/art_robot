@@ -1,14 +1,19 @@
 from __future__ import annotations
 
 import json
+import hashlib
+import io
+import sys
 import tempfile
 import unittest
+from contextlib import redirect_stdout
 from pathlib import Path
 from xml.etree import ElementTree as ET
 
 from PIL import Image, ImageDraw
 
 from png2svg.errors import EmptyImageError, ImageReadError, ValidationError
+from png2svg.cli import main
 from png2svg.pipeline import GenerateOptions, generate
 
 
@@ -67,6 +72,24 @@ class PipelineTests(unittest.TestCase):
             manifest = json.loads((out / "manifest.json").read_text(encoding="utf-8"))
             self.assertEqual(manifest["mode"], "production")
             self.assertIn("clean.svg", manifest["artifacts"])
+            for name, metadata in manifest["artifacts"].items():
+                payload = (out / name).read_bytes()
+                self.assertEqual(metadata["bytes"], len(payload))
+                self.assertEqual(metadata["sha256"], hashlib.sha256(payload).hexdigest())
+
+            sibling_source = ROOT / "svg2fanuc" / "src"
+            sys.path.insert(0, str(sibling_source))
+            try:
+                from svg2fanuc.profile import SecuritySpec
+                from svg2fanuc.security import gate_svg
+
+                gated = gate_svg(
+                    out / "clean.svg",
+                    SecuritySpec(1_000_000, 16, 10_000, 1_000_000),
+                )
+                self.assertGreater(gated.element_count, 2)
+            finally:
+                sys.path.remove(str(sibling_source))
 
     def test_deterministic_outputs(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
@@ -87,7 +110,7 @@ class PipelineTests(unittest.TestCase):
             out = root / "dry"
             make_drawing(source)
             result = generate(GenerateOptions(source, PROFILE, out, dry_run=True))
-            self.assertNotIn("clean.svg", result.artifacts)
+            self.assertEqual(result.artifacts, ["preview.svg", "stats.json"])
             self.assertFalse((out / "clean.svg").exists())
             self.assertTrue((out / "preview.svg").exists())
             self.assertTrue((out / "stats.json").exists())
@@ -121,6 +144,45 @@ class PipelineTests(unittest.TestCase):
                 generate(GenerateOptions(source, PROFILE, out, strict=True))
             self.assertEqual(context.exception.exit_code, 7)
             self.assertFalse((out / "clean.svg").exists())
+
+    def test_simplify_mm_is_converted_through_canvas_hint(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            source = root / "drawing.png"
+            make_drawing(source)
+            result = generate(
+                GenerateOptions(
+                    source,
+                    PROFILE,
+                    root / "job",
+                    canvas_hint_mm=(96.0, 64.0),
+                    simplify_mm=1.0,
+                )
+            )
+            self.assertEqual(result.stats["simplify_tolerance_vb"], 1.0)
+
+    def test_cli_success_prints_machine_readable_summary(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            source = root / "drawing.png"
+            out = root / "job"
+            make_drawing(source)
+            stdout = io.StringIO()
+            with redirect_stdout(stdout):
+                code = main(
+                    [
+                        "generate",
+                        str(source),
+                        "--profile",
+                        str(PROFILE),
+                        "--out",
+                        str(out),
+                    ]
+                )
+            payload = json.loads(stdout.getvalue())
+            self.assertEqual(code, 0)
+            self.assertEqual(payload["status"], "ok")
+            self.assertTrue((out / "clean.svg").exists())
 
 
 if __name__ == "__main__":

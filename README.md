@@ -1,45 +1,72 @@
-# `png2svg`
+# art_robot — «Линия индустрии»
 
-Рабочая реализация спецификации «PNG → очищенный SVG» для проекта
-«Линия индустрии».
+Программный конвейер арт-проекта: изображение, сгенерированное нейросетью,
+превращается в физический рисунок, который выполняет промышленный робот **FANUC**
+на глазах у публики.
 
-Утилита превращает темные штрихи на светлом растровом изображении в центральные
-линии и создает SVG профиля `SVG-DRAW-1`.
-
-## Быстрый запуск
-
-Из корня проекта без установки:
-
-```bash
-PYTHONPATH=src python3 -m png2svg generate input.png \
-  --profile profiles/raster_default_v1.yaml \
-  --out build/job_001
+```
+промпт → нейросеть → PNG
+                      │
+        ┌─────────────┴─────────────┐
+        │  png2svg                  │   растр → центральные линии штрихов →
+        │  (raster → cleaned SVG)   │   очистка от лишних точек → clean.svg
+        └─────────────┬─────────────┘
+                 clean.svg  (профиль SVG-DRAW-1)
+                      │
+        ┌─────────────┴─────────────┐
+        │  svg2fanuc                │   SVG → размещение на холсте (мм) →
+        │  (cleaned SVG → FANUC .LS)│   flattening → план движений → .LS
+        └─────────────┬─────────────┘
+                      │
+              ROBOGUIDE / оператор → робот рисует
 ```
 
-Установка CLI в виртуальное окружение:
+Стык между модулями — **единственный файл `clean.svg`**. Ни один модуль не знает о
+внутренностях другого.
+
+## Структура репозитория
+
+| Путь | Что это |
+|---|---|
+| `png2svg/` | модуль «PNG → очищенный SVG»: бинаризация, Zhang–Suen-скелетизация, граф, обрезка шпор, Douglas–Peucker, слияние и nearest+2-opt сортировка штрихов. NumPy/Pillow, опционально `scikit-image`. |
+| `svg2fanuc/` | модуль «очищенный SVG → траектория → программа FANUC»: secure SVG gate, разбор `viewBox`/transforms, адаптивный flattening в мм, routing, нейтральный Motion IR, FANUC LS-emitter с дроблением на подпрограммы, обёртка MakeTP, `inspect`/`generate`/`compile`/`verify`. |
+| `Концепция_Линия_индустрии.md` | смысловое ядро и сценарий перформанса |
+| `Обсуждение … в Челябинске.md` | транскрипт обсуждения команды |
+| `Техническая реализация — от изображения к траектории робота.md` | обзор конвейера, сравнение RoboDK и бесплатного стека, лицензии |
+| `Спецификация — PNG в очищенный SVG.md` | спецификация модуля `png2svg` |
+| `Спецификация — очищенный SVG в траекторию FANUC.md` | спецификация модуля `svg2fanuc` |
+
+Каждый модуль — самостоятельный Python-пакет со своим `pyproject.toml`, `README.md`
+и тестами.
+
+## Быстрый старт
 
 ```bash
-python3 -m venv .venv
-.venv/bin/pip install -e .
-.venv/bin/png2svg generate input.png \
-  --profile profiles/raster_default_v1.yaml \
-  --out build/job_001
+# 1. растр -> очищенный SVG
+cd png2svg
+PYTHONPATH=src python3 -m png2svg generate ../drawing.png \
+  --profile profiles/raster_default_v1.yaml --out build/job_001
+
+# 2. очищенный SVG -> программа FANUC
+cd ../svg2fanuc
+pip install -e ".[dev]"
+svg2fanuc generate ../png2svg/build/job_001/clean.svg \
+  --profile profiles/example_cell.yaml --out build/job_001
 ```
 
-Основные результаты: `clean.svg`, `preview.svg`, `stats.json` и
-`manifest.json`. Флаг `--debug` добавляет `skeleton.png`, а `--dry-run` не
-публикует `clean.svg`.
+`png2svg/examples/` содержит демонстрационный прогон на реальной фотографии.
 
-Каталог `--out` должен отсутствовать или быть пустым: это защищает от смешения
-артефактов разных заданий.
+## Безопасность
 
-## Проверка
+Ни один модуль не загружает программу в робот и не запускает его. Максимальное
+состояние задания `svg2fanuc` — `COMPILED_UNVERIFIED`.
 
-```bash
-make test
-make check
-```
+> **GENERATED ≠ SAFE TO RUN.** Достижимость, сингулярности, коллизии и
+> безопасность ячейки подтверждает интегратор и ROBOGUIDE, не эти программы.
 
-Реализация не загружает файлы в робот и не знает параметров FANUC. Ее
-единственный интеграционный результат — `clean.svg`.
+## Статус
 
+- `png2svg` — MVP: штриховая графика через `--engine skeleton`; `autotrace` и
+  модуль заливок опциональны.
+- `svg2fanuc` — MVP: этапы 1–3. Не сделано: реальный прогон MakeTP/ROBOGUIDE
+  (нужен Windows + `robot.ini`), выставочный диспетчер, backend ROS 2.

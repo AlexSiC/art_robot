@@ -215,7 +215,8 @@ def manifest_bytes(
             for name, data in sorted(artifacts.items())
         },
         "versions": dependency_versions(),
-        "mode": "dry-run" if dry_run else "production",
+        "mode": "development" if dry_run else "production",
+        "dry_run": dry_run,
     }
     source_date_epoch = os.environ.get("SOURCE_DATE_EPOCH")
     if source_date_epoch is not None:
