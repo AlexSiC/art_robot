@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1087">
+  <g fill="none" stroke="#000000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+    <polyline id="s0001" fill="none" points="255,219 354,279.5 459.27,346.54 655.5,477.5 727.1,527.5 788.83,583.87 745,586.5 737,588.5 721,596 713,601.5 698.5,616 691,627 685.5,639 681.5,653 679,721 680,722 680,870.75" />
+    <polyline id="s0002" fill="none" points="655,955 654,981" />
+    <polyline id="s0003" fill="none" points="759,982 759,954" />
+    <polyline id="s0004" fill="none" points="868,955 867,983" />
+    <polyline id="s0005" fill="none" points="968,954 967,983" />
+    <polyline id="s0006" fill="none" points="1067,957 1067,986" />
+    <polyline id="s0007" fill="none" points="994,870.75 991,488 982.78,451.22 969.5,433 959.5,409 957.5,361 961.5,347 965.5,338 977.5,318.38 990.52,304.76 1006,294 1021,286.5 1036,282.5 1086,284.5 1103,290.5 1115.15,297.54 1122.5,303 1135,315.5 1149.5,338 1155.5,356 1157.5,372" />
+    <polyline id="s0008" fill="none" points="1136,451 1133,870" />
+    <polyline id="s0009" fill="none" points="1231,871 896,869.75 680,870.75 568.33,869.67 458,871 354.33,869.67 268.5,871 135,871" />
+    <polyline id="s0010" fill="none" points="269,973 269,505" />
+    <polyline id="s0011" fill="none" points="354.33,869.67 355,702 354,701 354,279.5 353,210" />
+    <polyline id="s0012" fill="none" points="459,128 457,972" />
+    <polyline id="s0013" fill="none" points="568.33,869.67 568,563 569,562 569,498" />
+    <polyline id="s0014" fill="none" points="788.83,583.87 834.17,594.5" />
+    <polyline id="s0015" fill="none" points="836,419 836,521 835,522 835,553 836,554 834.17,594.5 836,773 835,774 835,870.75" />
+    <polyline id="s0016" fill="none" points="896,869.75 895,616 894,615 894,520 893,519 892,240 891,239 890,103" />
+  </g>
+</svg>

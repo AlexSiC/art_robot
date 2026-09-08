@@ -1,0 +1,2179 @@
+{
+  "schema": "svg2fanuc/trajectory@1",
+  "frame": {
+    "uframe_num": 1,
+    "utool_num": 1,
+    "orientation_wpr_deg": [
+      180.0,
+      0.0,
+      0.0
+    ],
+    "config": "N U T, 0, 0, 0",
+    "z_draw_mm": 0.0,
+    "z_clear_mm": 12.0
+  },
+  "stats": {
+    "motion_count": 126,
+    "linear_moves": 122,
+    "draw_length_mm": 2485.312,
+    "travel_length_mm": 957.246,
+    "estimated_time_s": 47.7
+  },
+  "motions": [
+    {
+      "kind": "SET_FRAME",
+      "phase": "ENTRY",
+      "termination": "FINE",
+      "target": "1"
+    },
+    {
+      "kind": "SET_TOOL",
+      "phase": "ENTRY",
+      "termination": "FINE",
+      "target": "1"
+    },
+    {
+      "kind": "CALL",
+      "phase": "ENTRY",
+      "termination": "FINE",
+      "target": "CELL_IN"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "TRAVEL",
+      "xyz_mm": [
+        32.610419026047566,
+        55.373725934314834,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 200.0,
+      "termination": "FINE",
+      "stroke_id": "s0009"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "PLUNGE",
+      "xyz_mm": [
+        32.610419026047566,
+        55.373725934314834,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0009"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        79.47904869762175,
+        55.373725934314834,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0009"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        109.6118912797282,
+        55.840656851642144,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0009"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        146.0079275198188,
+        55.373725934314834,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0009"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        184.7421291053228,
+        55.840656851642144,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0009"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        223.94677236693093,
+        55.46149490373726,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0009"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        299.77916194790487,
+        55.812570781426956,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0009"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        417.38958097395243,
+        55.373725934314834,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "FINE",
+      "stroke_id": "s0009"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "RETRACT",
+      "xyz_mm": [
+        417.38958097395243,
+        55.373725934314834,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0009"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "TRAVEL",
+      "xyz_mm": [
+        382.9841449603624,
+        55.72480181200453,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 200.0,
+      "termination": "FINE",
+      "stroke_id": "s0008"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "PLUNGE",
+      "xyz_mm": [
+        382.9841449603624,
+        55.72480181200453,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0008"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        384.0373725934315,
+        202.8255945639864,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "FINE",
+      "stroke_id": "s0008"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "RETRACT",
+      "xyz_mm": [
+        384.0373725934315,
+        202.8255945639864,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0008"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "TRAVEL",
+      "xyz_mm": [
+        391.5855039637599,
+        230.56058890147224,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 200.0,
+      "termination": "FINE",
+      "stroke_id": "s0007"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "PLUNGE",
+      "xyz_mm": [
+        391.5855039637599,
+        230.56058890147224,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0007"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        390.88335220838053,
+        236.17780294450736,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0007"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        388.77689694224233,
+        242.49716874292187,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0007"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        383.6862967157418,
+        250.39637599094,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0007"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        379.29784824462064,
+        254.78482446206115,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0007"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        376.7174405436014,
+        256.7016987542469,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0007"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        372.4518686296716,
+        259.1732729331824,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0007"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        366.48357870894677,
+        261.2797281993205,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0007"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        348.92978482446205,
+        261.9818799546999,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0007"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        343.66364665911664,
+        260.5775764439411,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0007"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        338.3975084937712,
+        257.9445073612684,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0007"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        332.9628539071348,
+        254.1669309173273,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0007"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        328.39184597961497,
+        249.38527746319366,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0007"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        324.17893544733863,
+        242.49716874292187,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0007"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        322.77463193657985,
+        239.3374858437146,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0007"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        321.37032842582107,
+        234.4224235560589,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0007"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        322.07248018120043,
+        217.57078142695357,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0007"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        325.5832389580974,
+        209.1449603624009,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0007"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        330.24552661381654,
+        202.74835787089467,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0007"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        333.1313703284258,
+        189.83578708946771,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0007"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        334.1845979614949,
+        55.46149490373726,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "FINE",
+      "stroke_id": "s0007"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "RETRACT",
+      "xyz_mm": [
+        334.1845979614949,
+        55.46149490373726,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0007"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "TRAVEL",
+      "xyz_mm": [
+        359.8131370328426,
+        15.0,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 200.0,
+      "termination": "FINE",
+      "stroke_id": "s0006"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "PLUNGE",
+      "xyz_mm": [
+        359.8131370328426,
+        15.0,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0006"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        359.8131370328426,
+        25.181200453001132,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "FINE",
+      "stroke_id": "s0006"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "RETRACT",
+      "xyz_mm": [
+        359.8131370328426,
+        25.181200453001132,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0006"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "TRAVEL",
+      "xyz_mm": [
+        325.05662514156285,
+        26.234428086070217,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 200.0,
+      "termination": "FINE",
+      "stroke_id": "s0005"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "PLUNGE",
+      "xyz_mm": [
+        325.05662514156285,
+        26.234428086070217,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0005"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        324.70554926387314,
+        16.05322763306908,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "FINE",
+      "stroke_id": "s0005"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "RETRACT",
+      "xyz_mm": [
+        324.70554926387314,
+        16.05322763306908,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0005"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "TRAVEL",
+      "xyz_mm": [
+        289.59796149490376,
+        16.05322763306908,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 200.0,
+      "termination": "FINE",
+      "stroke_id": "s0004"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "PLUNGE",
+      "xyz_mm": [
+        289.59796149490376,
+        16.05322763306908,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0004"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        289.9490373725934,
+        25.883352208380522,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "FINE",
+      "stroke_id": "s0004"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "RETRACT",
+      "xyz_mm": [
+        289.9490373725934,
+        25.883352208380522,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0004"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "TRAVEL",
+      "xyz_mm": [
+        299.77916194790487,
+        55.812570781426956,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 200.0,
+      "termination": "FINE",
+      "stroke_id": "s0016"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "PLUNGE",
+      "xyz_mm": [
+        299.77916194790487,
+        55.812570781426956,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0016"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        299.42808607021516,
+        144.89807474518688,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0016"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        299.0770101925255,
+        145.24915062287656,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0016"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        299.0770101925255,
+        178.6013590033975,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0016"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        298.7259343148358,
+        178.9524348810872,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0016"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        298.3748584371461,
+        276.9026047565119,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0016"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        298.0237825594564,
+        277.2536806342016,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0016"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        297.6727066817667,
+        325.0,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "FINE",
+      "stroke_id": "s0016"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "RETRACT",
+      "xyz_mm": [
+        297.6727066817667,
+        325.0,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0016"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "TRAVEL",
+      "xyz_mm": [
+        146.3590033975085,
+        316.22310305775767,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 200.0,
+      "termination": "FINE",
+      "stroke_id": "s0012"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "PLUNGE",
+      "xyz_mm": [
+        146.3590033975085,
+        316.22310305775767,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0012"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        145.6568516421291,
+        19.91506228765572,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "FINE",
+      "stroke_id": "s0012"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "RETRACT",
+      "xyz_mm": [
+        145.6568516421291,
+        19.91506228765572,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0012"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "TRAVEL",
+      "xyz_mm": [
+        184.7421291053228,
+        55.840656851642144,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 200.0,
+      "termination": "FINE",
+      "stroke_id": "s0013"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "PLUNGE",
+      "xyz_mm": [
+        184.7421291053228,
+        55.840656851642144,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0013"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        184.62627406568518,
+        163.50509626274066,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0013"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        184.97734994337486,
+        163.85617214043035,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0013"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        184.97734994337486,
+        186.3250283125708,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "FINE",
+      "stroke_id": "s0013"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "RETRACT",
+      "xyz_mm": [
+        184.97734994337486,
+        186.3250283125708,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0013"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "TRAVEL",
+      "xyz_mm": [
+        278.07214043035106,
+        152.44620611551528,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 200.0,
+      "termination": "FINE",
+      "stroke_id": "s0014"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "PLUNGE",
+      "xyz_mm": [
+        278.07214043035106,
+        152.44620611551528,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0014"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        262.15436013590033,
+        156.17814269535674,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "FINE",
+      "stroke_id": "s0014"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "RETRACT",
+      "xyz_mm": [
+        262.15436013590033,
+        156.17814269535674,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0014"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "TRAVEL",
+      "xyz_mm": [
+        278.7146092865232,
+        214.06002265005662,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 200.0,
+      "termination": "FINE",
+      "stroke_id": "s0015"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "PLUNGE",
+      "xyz_mm": [
+        278.7146092865232,
+        214.06002265005662,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0015"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        278.7146092865232,
+        178.25028312570782,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0015"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        278.3635334088335,
+        177.89920724801812,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0015"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        278.3635334088335,
+        167.01585503963761,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0015"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        278.7146092865232,
+        166.6647791619479,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0015"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        278.07214043035106,
+        152.44620611551528,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0015"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        278.7146092865232,
+        89.77916194790487,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0015"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        278.3635334088335,
+        89.42808607021517,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0015"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        278.3635334088335,
+        55.46149490373726,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "FINE",
+      "stroke_id": "s0015"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "RETRACT",
+      "xyz_mm": [
+        278.3635334088335,
+        55.46149490373726,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0015"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "TRAVEL",
+      "xyz_mm": [
+        251.68176670441676,
+        26.234428086070217,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 200.0,
+      "termination": "FINE",
+      "stroke_id": "s0003"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "PLUNGE",
+      "xyz_mm": [
+        251.68176670441676,
+        26.234428086070217,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0003"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        251.68176670441676,
+        16.404303510758776,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "FINE",
+      "stroke_id": "s0003"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "RETRACT",
+      "xyz_mm": [
+        251.68176670441676,
+        16.404303510758776,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0003"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "TRAVEL",
+      "xyz_mm": [
+        214.81879954699886,
+        16.75537938844847,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 200.0,
+      "termination": "FINE",
+      "stroke_id": "s0002"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "PLUNGE",
+      "xyz_mm": [
+        214.81879954699886,
+        16.75537938844847,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0002"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        215.16987542468857,
+        25.883352208380522,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "FINE",
+      "stroke_id": "s0002"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "RETRACT",
+      "xyz_mm": [
+        215.16987542468857,
+        25.883352208380522,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0002"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "TRAVEL",
+      "xyz_mm": [
+        223.94677236693093,
+        55.46149490373726,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 200.0,
+      "termination": "FINE",
+      "stroke_id": "s0001"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "PLUNGE",
+      "xyz_mm": [
+        223.94677236693093,
+        55.46149490373726,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0001"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        223.94677236693093,
+        107.68403171007928,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0001"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        223.59569648924122,
+        108.03510758776898,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0001"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        224.47338618346546,
+        131.90826727066818,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0001"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        225.87768969422424,
+        136.8233295583239,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0001"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        227.80860702151756,
+        141.03624009060024,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0001"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        230.44167610419026,
+        144.89807474518688,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0001"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        235.53227633069082,
+        149.98867497168743,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0001"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        238.34088335220838,
+        151.91959229898075,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0001"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        243.9580973952435,
+        154.55266138165345,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0001"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        246.76670441676106,
+        155.25481313703284,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0001"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        262.15436013590033,
+        156.17814269535674,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "FINE",
+      "stroke_id": "s0001"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        240.48244620611553,
+        175.9682899207248,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0001"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        215.34541336353342,
+        193.52208380520952,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0001"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        146.4537938844847,
+        239.4989807474519,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0001"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        109.4960362400906,
+        263.03510758776895,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0001"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        74.73952434881087,
+        284.2751981879955,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "FINE",
+      "stroke_id": "s0001"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "RETRACT",
+      "xyz_mm": [
+        74.73952434881087,
+        284.2751981879955,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0001"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "TRAVEL",
+      "xyz_mm": [
+        109.14496036240091,
+        287.4348810872027,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 200.0,
+      "termination": "FINE",
+      "stroke_id": "s0011"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "PLUNGE",
+      "xyz_mm": [
+        109.14496036240091,
+        287.4348810872027,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0011"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        109.4960362400906,
+        263.03510758776895,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0011"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        109.4960362400906,
+        115.05662514156286,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0011"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        109.8471121177803,
+        114.70554926387317,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "CNT",
+      "cnt": 3,
+      "stroke_id": "s0011"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        109.6118912797282,
+        55.840656851642144,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "FINE",
+      "stroke_id": "s0011"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "RETRACT",
+      "xyz_mm": [
+        109.6118912797282,
+        55.840656851642144,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0011"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "TRAVEL",
+      "xyz_mm": [
+        79.65458663646659,
+        19.563986409966024,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 200.0,
+      "termination": "FINE",
+      "stroke_id": "s0010"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "PLUNGE",
+      "xyz_mm": [
+        79.65458663646659,
+        19.563986409966024,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0010"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "DRAW",
+      "xyz_mm": [
+        79.65458663646659,
+        183.86749716874291,
+        0.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 80.0,
+      "termination": "FINE",
+      "stroke_id": "s0010"
+    },
+    {
+      "kind": "LINEAR",
+      "phase": "RETRACT",
+      "xyz_mm": [
+        79.65458663646659,
+        183.86749716874291,
+        12.0
+      ],
+      "wpr_deg": [
+        180.0,
+        0.0,
+        0.0
+      ],
+      "speed": 30.0,
+      "termination": "FINE",
+      "stroke_id": "s0010"
+    },
+    {
+      "kind": "CALL",
+      "phase": "EXIT",
+      "termination": "FINE",
+      "target": "CELL_OUT"
+    }
+  ]
+}

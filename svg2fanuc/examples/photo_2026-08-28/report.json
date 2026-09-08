@@ -1,0 +1,121 @@
+{
+  "schema": "svg2fanuc/report@1",
+  "command": "generate",
+  "job_id": "photo_2026-08-28",
+  "job_state": "GENERATED_UNCOMPILED",
+  "safety_notice": "GENERATED != SAFE TO RUN. A qualified cell profile, integrator review and operator confirmation are required. This tool never asserts reachability, singularity-freedom, collision-freedom or visitor safety.",
+  "profile": {
+    "cell_id": "roboguide_demo_cr7ial_v0",
+    "sha256": "d2cb8fbef2c16bb4b13275f4137b6bcb176092d4ae54557a2f08d0a11fbc1a29",
+    "robot": {
+      "model": "CR-7iA/L",
+      "controller": "R-30iB Plus",
+      "config": "N U T, 0, 0, 0"
+    },
+    "canvas_mm": [
+      450.0,
+      340.0
+    ],
+    "margin_mm": 15.0,
+    "routing_mode": "nearest"
+  },
+  "placement": {
+    "scale_x_mm_per_unit": 0.3510758776896942,
+    "scale_y_mm_per_unit": 0.3510758776896942,
+    "src_bbox_units": [
+      135.0,
+      103.0,
+      1231.0,
+      986.0
+    ],
+    "drawn_size_mm": [
+      384.77916194790487,
+      310.0
+    ],
+    "align_offset_mm": [
+      17.610419026047566,
+      0.0
+    ]
+  },
+  "metrics": {
+    "elements_with_geometry": 16,
+    "raw_subpaths": 16,
+    "strokes": 16,
+    "points": 90,
+    "draw_length_mm": 2485.312,
+    "max_flatten_error_mm": 0.0,
+    "dropped_short_strokes": 0,
+    "dropped_degenerate_strokes": 0,
+    "trajectory": {
+      "motion_count": 126,
+      "linear_moves": 122,
+      "draw_length_mm": 2485.312,
+      "travel_length_mm": 957.246,
+      "estimated_time_s": 47.7
+    },
+    "travel_length_before_mm": 1040.771,
+    "travel_length_after_mm": 829.508,
+    "strokes_reversed_by_routing": 10,
+    "bbox_mm": [
+      32.61,
+      15.0,
+      417.39,
+      325.0
+    ]
+  },
+  "validation": {
+    "ok": true,
+    "checks": [
+      {
+        "name": "points_in_allowed_area",
+        "passed": true,
+        "detail": "0 points outside"
+      },
+      {
+        "name": "phase_z_consistency",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "stroke_phase_order",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "stroke_fits_subprogram",
+        "passed": true,
+        "detail": "largest stroke = 20 moves, limit = 1500"
+      },
+      {
+        "name": "single_frame_and_config",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "motion_budget",
+        "passed": true,
+        "detail": "122 linear moves"
+      },
+      {
+        "name": "flatten_within_tolerance",
+        "passed": true,
+        "detail": "worst = 0.00000 mm"
+      }
+    ],
+    "warnings": []
+  },
+  "fanuc_ls": {
+    "split": false,
+    "master": "ART00001",
+    "parts": [],
+    "programs": [
+      {
+        "name": "ART00001",
+        "motion_lines": 122,
+        "positions": 122
+      }
+    ]
+  },
+  "maketp": null,
+  "warnings": []
+}

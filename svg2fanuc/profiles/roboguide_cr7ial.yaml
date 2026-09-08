@@ -1,0 +1,73 @@
+# Демонстрационный профиль для симуляции в ROBOGUIDE.
+# Робот: FANUC CR-7iA/L (коллаборативный, 7 кг, вылет 911 мм, контроллер R-30iB Plus).
+# Значения инженерные, НЕ квалифицированы для реального робота — только для
+# просмотра воспроизведения в ROBOGUIDE.
+schema_version: 1
+cell_id: roboguide_demo_cr7ial_v0
+
+robot:
+  vendor: FANUC
+  model: CR-7iA/L
+  controller: R-30iB Plus
+  controller_software: V9.30
+  config: "N U T, 0, 0, 0"
+
+frames:
+  uframe_num: 1
+  utool_num: 1
+  # кисть смотрит вниз в горизонтальный холст (ось Z инструмента против оси Z UFRAME)
+  orientation_wpr_deg: [180.0, 0.0, 0.0]
+
+canvas:
+  # небольшой холст, гарантированно в зоне досягаемости CR-7iA/L
+  width_mm: 450.0
+  height_mm: 340.0
+  margin_mm: 15.0
+  fit: contain
+  align: center
+  z_draw_mm: 0.0
+  z_clear_mm: 12.0
+
+geometry:
+  flatness_mm: 0.25
+  max_segment_mm: 5.0
+  dedupe_epsilon_mm: 0.01
+  min_stroke_length_mm: 1.0
+  max_subdivision_depth: 20
+  max_strokes: 5000
+  max_points: 50000
+  max_draw_length_mm: 100000.0
+
+routing:
+  mode: nearest
+  travel_start_xy_mm: [0.0, 0.0]
+  two_opt_max_iterations: 200
+
+motion:
+  draw_speed_mm_s: 80.0
+  plunge_speed_mm_s: 30.0
+  retract_speed_mm_s: 30.0
+  travel_speed_mm_s: 200.0
+  cnt_draw: 3
+  sharp_corner_deg: 55.0
+  entry_program: CELL_IN
+  exit_program: CELL_OUT
+
+fanuc_ls:
+  program_name_prefix: ART
+  program_name_max_chars: 8
+  max_motion_lines_per_subprogram: 1500
+  encoding: ascii
+  decimal_places_mm: 3
+  decimal_places_deg: 3
+
+compile:
+  enabled: false
+  maketp_exe: null
+  robot_ini: null
+
+security:
+  max_input_bytes: 10485760
+  max_xml_depth: 32
+  max_elements: 20000
+  max_attribute_chars: 1000000

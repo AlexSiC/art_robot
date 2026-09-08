@@ -1,0 +1,55 @@
+{
+  "schema": "svg2fanuc/manifest@1",
+  "command": "generate",
+  "app_version": "0.1.0",
+  "python": "3.12.3",
+  "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.39",
+  "dependencies": {
+    "svgelements": "1.9.6",
+    "defusedxml": "0.7.1",
+    "PyYAML": "6.0.1"
+  },
+  "generated_at_utc": "2026-09-08T08:36:14+00:00",
+  "production": false,
+  "job_state": "GENERATED_UNCOMPILED",
+  "input": {
+    "path": "../png2svg/examples/output_photo_2026-08-28/clean.svg",
+    "sha256": "b66df2af2713add02de1d93044029a2a95df565a66f887e60c45a5270356c5da"
+  },
+  "profile": {
+    "path": "profiles/roboguide_cr7ial.yaml",
+    "sha256": "d2cb8fbef2c16bb4b13275f4137b6bcb176092d4ae54557a2f08d0a11fbc1a29"
+  },
+  "artifacts": {
+    "ART00001.LS": {
+      "sha256": "053da60a774dcb58a3ac572e656288e815e61bf68de6ff66ca57f7ba87de3336"
+    },
+    "normalized.svg": {
+      "sha256": "2f417adf356987aa5c9763b3665db3d31bf9248b0152240d45c48ba72a53fdaa"
+    },
+    "preview.svg": {
+      "sha256": "78999b365f3ec76dd76eab11e1ba5fca20fc6a270ea944618fd89a2c2e752650"
+    },
+    "report.json": {
+      "sha256": "634dd227b428ce5be413f73426b72870b3c156ec181683a2355d7841be418cef"
+    },
+    "trajectory.json": {
+      "sha256": "3a039e07001895591980441cddce1bcc437e3ffa87eb89f175c28ac72eb9dc63"
+    }
+  },
+  "extra": {
+    "programs": {
+      "split": false,
+      "master": "ART00001",
+      "parts": [],
+      "programs": [
+        {
+          "name": "ART00001",
+          "motion_lines": 122,
+          "positions": 122
+        }
+      ]
+    },
+    "job_number": 1
+  }
+}
