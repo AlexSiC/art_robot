@@ -3,13 +3,13 @@
   "command": "generate",
   "app_version": "0.1.0",
   "python": "3.12.3",
-  "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.39",
+  "platform": "Linux-6.8.0-139-generic-x86_64-with-glibc2.39",
   "dependencies": {
     "svgelements": "1.9.6",
     "defusedxml": "0.7.1",
     "PyYAML": "6.0.1"
   },
-  "generated_at_utc": "2026-09-08T08:36:14+00:00",
+  "generated_at_utc": "2026-09-21T08:18:33+00:00",
   "production": false,
   "job_state": "GENERATED_UNCOMPILED",
   "input": {
@@ -17,12 +17,12 @@
     "sha256": "b66df2af2713add02de1d93044029a2a95df565a66f887e60c45a5270356c5da"
   },
   "profile": {
-    "path": "profiles/roboguide_cr7ial.yaml",
-    "sha256": "d2cb8fbef2c16bb4b13275f4137b6bcb176092d4ae54557a2f08d0a11fbc1a29"
+    "path": "profiles/roboguide_m10id12.yaml",
+    "sha256": "212a18a56eb520f696a362afa5e4c40b333933c874f373845004835c6b9187f2"
   },
   "artifacts": {
     "ART00001.LS": {
-      "sha256": "053da60a774dcb58a3ac572e656288e815e61bf68de6ff66ca57f7ba87de3336"
+      "sha256": "d7c33c6464c68cc19d5cb25d287ecfb3e6c5f37652706279bf24805d38903cda"
     },
     "normalized.svg": {
       "sha256": "2f417adf356987aa5c9763b3665db3d31bf9248b0152240d45c48ba72a53fdaa"
@@ -31,7 +31,7 @@
       "sha256": "78999b365f3ec76dd76eab11e1ba5fca20fc6a270ea944618fd89a2c2e752650"
     },
     "report.json": {
-      "sha256": "634dd227b428ce5be413f73426b72870b3c156ec181683a2355d7841be418cef"
+      "sha256": "42b51d740d33bd922ed927e32ca2f3c618e589754d5546d7f117e519d467a01f"
     },
     "trajectory.json": {
       "sha256": "3a039e07001895591980441cddce1bcc437e3ffa87eb89f175c28ac72eb9dc63"

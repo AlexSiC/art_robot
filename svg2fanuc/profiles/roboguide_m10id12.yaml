@@ -1,13 +1,13 @@
 # Демонстрационный профиль для симуляции в ROBOGUIDE.
-# Робот: FANUC CR-7iA/L (коллаборативный, 7 кг, вылет 911 мм, контроллер R-30iB Plus).
+# Робот: FANUC M-10iD/12 (промышленный, не кобот; 12 кг, вылет 1441 мм, контроллер R-30iB Plus).
 # Значения инженерные, НЕ квалифицированы для реального робота — только для
 # просмотра воспроизведения в ROBOGUIDE.
 schema_version: 1
-cell_id: roboguide_demo_cr7ial_v0
+cell_id: roboguide_demo_m10id12_v0
 
 robot:
   vendor: FANUC
-  model: CR-7iA/L
+  model: M-10iD/12
   controller: R-30iB Plus
   controller_software: V9.30
   config: "N U T, 0, 0, 0"
@@ -19,7 +19,7 @@ frames:
   orientation_wpr_deg: [180.0, 0.0, 0.0]
 
 canvas:
-  # небольшой холст, гарантированно в зоне досягаемости CR-7iA/L
+  # демонстрационный холст; итоговый размер рабочей поверхности ещё не утверждён
   width_mm: 450.0
   height_mm: 340.0
   margin_mm: 15.0

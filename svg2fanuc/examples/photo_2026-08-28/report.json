@@ -5,10 +5,10 @@
   "job_state": "GENERATED_UNCOMPILED",
   "safety_notice": "GENERATED != SAFE TO RUN. A qualified cell profile, integrator review and operator confirmation are required. This tool never asserts reachability, singularity-freedom, collision-freedom or visitor safety.",
   "profile": {
-    "cell_id": "roboguide_demo_cr7ial_v0",
-    "sha256": "d2cb8fbef2c16bb4b13275f4137b6bcb176092d4ae54557a2f08d0a11fbc1a29",
+    "cell_id": "roboguide_demo_m10id12_v0",
+    "sha256": "212a18a56eb520f696a362afa5e4c40b333933c874f373845004835c6b9187f2",
     "robot": {
-      "model": "CR-7iA/L",
+      "model": "M-10iD/12",
       "controller": "R-30iB Plus",
       "config": "N U T, 0, 0, 0"
     },
